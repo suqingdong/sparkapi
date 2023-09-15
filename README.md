@@ -3,7 +3,7 @@
 
 ## Installation
 ```bash
-python3 -m pip install sparkapi
+python3 -m pip install sparkapi-python
 ```
 
 ## Configuration
@@ -27,6 +27,7 @@ sparkapi --help
 # start a chat session
 sparkapi chat
 
+# get completion from your prompt
 sparkapi prompt "帮我编写一个Python的菲波那切数列"
 ```
 

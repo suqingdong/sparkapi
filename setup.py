@@ -7,7 +7,7 @@ BASE_DIR = Path(__file__).resolve().parent
 version_info = json.load(BASE_DIR.joinpath('sparkapi', 'version.json').open())
 
 setup(
-    name=version_info['prog'],
+    name=version_info['prog'] + '-python',
     version=version_info['version'],
     author=version_info['author'],
     author_email=version_info['author_email'],
@@ -17,6 +17,7 @@ setup(
     url=version_info['url'],
     license='MIT License',
     install_requires=BASE_DIR.joinpath('requirements.txt').read_text().strip().split(),
+    python_requires='>=3.9',
     packages=find_packages(),
     include_package_data=True,
     entry_points={'console_scripts': [
@@ -28,8 +29,7 @@ setup(
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
         'Programming Language :: Python',
-        'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: Only',
+        'Programming Language :: Python :: 3 :: Only',
         'Programming Language :: Python :: 3.9',
         'Programming Language :: Python :: 3.10',
         'Programming Language :: Python :: 3.11',
