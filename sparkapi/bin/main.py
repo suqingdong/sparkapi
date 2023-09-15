@@ -16,6 +16,7 @@ CONTEXT_SETTINGS = dict(help_option_names=['-?', '-h', '--help'])
     no_args_is_help=True,
 )
 @click.option('-e', '--env-file', help='Environment file', default='~/.sparkapi.env', show_default=True)
+@click.version_option(version=version_info['version'], prog_name=version_info['prog'])
 @click.pass_context
 def cli(ctx, **kwargs):
     config = SparkConfig(_env_file=kwargs['env_file']).model_dump()
