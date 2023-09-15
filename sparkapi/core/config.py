@@ -12,3 +12,20 @@ class SparkConfig(BaseSettings):
         env_prefix='SPARK_',
         case_sensitive=False,
     )
+
+
+class ChatConfig(BaseSettings):
+    temperature: float = 0.5
+    max_tokens: int = 2048
+    top_k: int = 4
+
+    model_config = SettingsConfigDict(
+        env_file='~/.sparkapi.env',
+        env_prefix='SPARK_CHAT_',
+        case_sensitive=False,
+    )
+
+
+if __name__ == '__main__':
+    print(1, SparkConfig(_env_file='.env'))
+    print(2, ChatConfig(_env_file='.env'))

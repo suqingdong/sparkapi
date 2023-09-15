@@ -3,7 +3,7 @@ import click
 
 from sparkapi import version_info
 from sparkapi.core.api import SparkAPI
-from sparkapi.core.config import SparkConfig
+from sparkapi.core.config import SparkConfig, ChatConfig
 
 
 CONTEXT_SETTINGS = dict(help_option_names=['-?', '-h', '--help'])
@@ -19,16 +19,18 @@ CONTEXT_SETTINGS = dict(help_option_names=['-?', '-h', '--help'])
 @click.pass_context
 def cli(ctx, **kwargs):
     config = SparkConfig(_env_file=kwargs['env_file']).model_dump()
+    chat_config = ChatConfig(_env_file=kwargs['env_file']).model_dump()
     # print(config)
     ctx.ensure_object(dict)
     ctx.obj['config'] = config
+    ctx.obj['chat_config'] = chat_config
 
 
 @click.command(name='chat', help='Start a chat session')
 @click.pass_obj
 def chat_cli(obj):
     api = SparkAPI(**obj['config'])
-    api.chat()
+    api.chat(**obj['chat_config'])
 
 
 @click.command(name='prompt', help='Get completion form your prompt')
@@ -36,7 +38,7 @@ def chat_cli(obj):
 @click.pass_obj
 def prompt_cli(obj, prompt):
     api = SparkAPI(**obj['config'])
-    result = api.get_completion(' '.join(prompt))
+    result = api.get_completion(' '.join(prompt), **obj['chat_config'])
     for part in result:
         print(part, end='')
 

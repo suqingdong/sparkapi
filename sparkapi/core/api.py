@@ -11,7 +11,7 @@ from .model import MODEL_MAP
 
 
 class SparkAPI(object):
-    def __init__(self, app_id: str, api_key: str, api_secret: str, api_model: str):
+    def __init__(self, app_id: str, api_key: str, api_secret: str, api_model: str, **kwargs):
         self.app_id = app_id
         self.api_key = api_key
         self.api_secret = api_secret
@@ -31,6 +31,7 @@ class SparkAPI(object):
             text=messages,
             **kwargs
         )
+        # print(query.dump_json())
         return query.dump_json()
 
     def get_completion(self, prompt: str, **kwargs):
