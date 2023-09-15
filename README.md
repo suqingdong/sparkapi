@@ -1,4 +1,5 @@
 # SparkDesk API and Client
+> https://www.xfyun.cn/doc/spark/Web.html
 
 ## Installation
 ```bash
@@ -6,13 +7,15 @@ python3 -m pip install sparkapi
 ```
 
 ## Configuration
-```bash
-cat > ~/.sparkapi.env << EOF
+> copy `example.env` to `~/.sparkapi.env` and edit the file with your credentials.
+```
 SPARK_APP_ID=<your-app-id>
-SPARK_API_KEY=<your-api-key>
 SPARK_API_SECRET=<your-api-secret>
-SPARK_API_MODEL=<model_version>  # v1.5, v2.0
-EOF
+SPARK_API_KEY=<your-api-key>
+SPARK_API_MODEL='v2.0'          # v1.5, v2.0
+SPARK_CHAT_MAX_TOKENS=4096      # 1-4096
+SPARK_CHAT_TEMPERATURE=0.5      # 0-1
+SPARK_CHAT_TOP_K=4              # 1-6
 ```
 
 ## Quickstart
