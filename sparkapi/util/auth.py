@@ -1,6 +1,7 @@
 import hmac
 import base64
 import hashlib
+import textwrap
 
 from urllib.parse import urlencode, urlparse
 
@@ -16,11 +17,11 @@ def get_wss_url(api_url, api_secret, api_key):
 
     # step1: generate signature
     rfc1123_date = generate_rfc1123_date()
-    signature_origin = f'''
-host: {api_host}
-date: {rfc1123_date}
-GET {api_path} HTTP/1.1
-    '''.strip()
+    signature_origin = textwrap.dedent(f'''
+        host: {api_host}
+        date: {rfc1123_date}
+        GET {api_path} HTTP/1.1
+    ''').strip()
     signature_sha = hmac.new(
         api_secret.encode(),
         signature_origin.encode(),

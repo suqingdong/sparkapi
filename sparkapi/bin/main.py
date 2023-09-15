@@ -19,7 +19,7 @@ CONTEXT_SETTINGS = dict(help_option_names=['-?', '-h', '--help'])
 @click.pass_context
 def cli(ctx, **kwargs):
     config = SparkConfig(_env_file=kwargs['env_file']).model_dump()
-    print(config)
+    # print(config)
     ctx.ensure_object(dict)
     ctx.obj['config'] = config
 

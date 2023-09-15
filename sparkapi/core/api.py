@@ -63,7 +63,7 @@ class SparkAPI(object):
             prompt = click.prompt(click.style('>>> User', fg='yellow', italic=True))
             messages.append({'role': 'user', 'content': prompt})
 
-            print(messages)
+            # print(messages)
             result = ''.join(self.get_completion_from_messages(messages, **kwargs))
         
             click.secho(f'>>> AI: {result}', fg='cyan', bold=True)

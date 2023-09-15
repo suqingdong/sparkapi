@@ -36,7 +36,7 @@ class QueryParams:
 
     temperature: float = 0.5
     max_tokens: int = 2048
-    top_k: int = 4
+    top_k: int = 1
     chat_id: Optional[str] = None
 
     def dump(self):
