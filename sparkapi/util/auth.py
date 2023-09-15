@@ -45,5 +45,5 @@ GET {api_path} HTTP/1.1
         'host': api_host
     }
     url = api_url + '?' + urlencode(payload)
-    print(f'wss url: {url}')
+    # print(f'wss url: {url}')
     return url
