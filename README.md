@@ -26,10 +26,14 @@ sparkapi --help
 
 # start a chat session
 sparkapi chat
+```
+![](https://suqingdong.github.io/sparkapi/src/cmd_chat.png)
 
+```bash
 # get completion from your prompt
 sparkapi prompt "编写一个Python的斐波那契数列函数"
 ```
+![](https://suqingdong.github.io/sparkapi/src/cmd_prompt.png)
 
 ### Python
 ```python
