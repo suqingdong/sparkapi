@@ -31,7 +31,7 @@ sparkapi chat
 
 ```bash
 # get completion from your prompt
-sparkapi prompt "编写一个Python的斐波那契数列函数"
+sparkapi prompt 详细介绍一下科大讯飞，输出Markdown结果
 ```
 ![](https://suqingdong.github.io/sparkapi/src/cmd_prompt.png)
 
