@@ -28,7 +28,7 @@ sparkapi --help
 sparkapi chat
 
 # get completion from your prompt
-sparkapi prompt "帮我编写一个Python的菲波那切数列"
+sparkapi prompt "编写一个Python的斐波那契数列函数"
 ```
 
 ### Python
