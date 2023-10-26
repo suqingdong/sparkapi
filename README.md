@@ -1,6 +1,16 @@
 # SparkDesk API and Client
 > https://www.xfyun.cn/doc/spark/Web.html
 
+***接口说明***
+注意： 该接口可以正式使用。如您需要申请使用，请点击前往[产品页面 ](https://xinghuo.xfyun.cn/sparkapi?scr=price)
+
+计费说明：
+| 服务引擎               | 单价              |
+|--------------------|-----------------|
+| 讯飞星火认知大模型V1.5 | 0.18元/万tokens   |
+| 讯飞星火认知大模型V2.0 | 0.36元/万tokens   |
+| 讯飞星火认知大模型V3.0 | 0.36元/万tokens   |
+
 ## Installation
 ```bash
 python3 -m pip install -U sparkapi-python
@@ -58,3 +68,8 @@ messages = [
 res = api.get_completion_from_messages(messages)
 print(''.join(res))
 ```
+
+### Changelog
+
+#### [1.0.3] - 2023-10-26
+- Add support for `v3.0`
