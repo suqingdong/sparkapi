@@ -47,6 +47,8 @@ class SparkAPI(object):
         wss = self.create_wss_connection()
 
         query = self.build_query(messages, **kwargs)
+        from pprint import pprint
+        # pprint(query)
         wss.send(query)
 
         while True:

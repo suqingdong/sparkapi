@@ -7,6 +7,7 @@ from dataclasses import dataclass, asdict
 class Domain(Enum):
     GENERAL = 'general'
     GENERAL_V2 = 'generalv2'
+    GENERAL_V3 = 'generalv3'
 
     def __str__(self):
         return self.value

@@ -3,7 +3,7 @@
 
 ## Installation
 ```bash
-python3 -m pip install sparkapi-python
+python3 -m pip install -U sparkapi-python
 ```
 
 ## Configuration
@@ -12,8 +12,8 @@ python3 -m pip install sparkapi-python
 SPARK_APP_ID=<your-app-id>
 SPARK_API_SECRET=<your-api-secret>
 SPARK_API_KEY=<your-api-key>
-SPARK_API_MODEL='v2.0'          # v1.5, v2.0
-SPARK_CHAT_MAX_TOKENS=4096      # 1-4096
+SPARK_API_MODEL='v3.0'          # v1.5, v2.0, v3.0
+SPARK_CHAT_MAX_TOKENS=4096      # v1.5: 1-4096, v2.0: 1-8192
 SPARK_CHAT_TEMPERATURE=0.5      # 0-1
 SPARK_CHAT_TOP_K=4              # 1-6
 ```
