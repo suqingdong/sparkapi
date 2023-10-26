@@ -17,7 +17,7 @@ setup(
     url=version_info['url'],
     license='MIT License',
     install_requires=BASE_DIR.joinpath('requirements.txt').read_text().strip().split(),
-    python_requires='>=3.9',
+    python_requires='>=3.8',
     packages=find_packages(),
     include_package_data=True,
     entry_points={'console_scripts': [
@@ -30,6 +30,7 @@ setup(
         'License :: OSI Approved :: MIT License',
         'Programming Language :: Python',
         'Programming Language :: Python :: 3 :: Only',
+        'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
         'Programming Language :: Python :: 3.10',
         'Programming Language :: Python :: 3.11',
