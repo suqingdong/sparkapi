@@ -2,8 +2,8 @@ import click
 
 
 from sparkapi import version_info, MODELS
-from sparkapi.core.api import SparkAPI
-from sparkapi.core.config import SparkConfig, ChatConfig
+from sparkapi.core.chat.api import SparkAPI
+from sparkapi.core.chat.config import SparkConfig, ChatConfig
 
 
 CONTEXT_SETTINGS = dict(help_option_names=['-?', '-h', '--help'])

@@ -14,5 +14,15 @@
     "v3.5": {
         "domain": "generalv3.5",
         "url": "wss://spark-api.xf-yun.com/v3.5/chat"
+    },
+    "tti": {
+        "domain": "general",
+        "url": "https://spark-api.cn-huabei-1.xf-yun.com/v2.1/tti",
+        "desc": "图像生成"
+    },
+    "image": {
+        "domain": "general",
+        "url": "wss://spark-api.cn-huabei-1.xf-yun.com/v2.1/image",
+        "desc": "图像理解"
     }
 }

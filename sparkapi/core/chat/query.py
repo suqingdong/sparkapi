@@ -4,16 +4,8 @@ from typing import Optional, List
 from dataclasses import dataclass, asdict
 
 
-class Domain(Enum):
-    GENERAL = 'general'
-    GENERAL_V2 = 'generalv2'
-    GENERAL_V3 = 'generalv3'
-
-    def __str__(self):
-        return self.value
-
-
 class Role(Enum):
+    SYSTEM = 'system'
     USER = 'user'
     ASSISTANT = 'assistant'
 
@@ -31,7 +23,7 @@ class Text:
 class QueryParams:
     app_id: str
     text: List[Text]
-    domain: Domain
+    domain: Text
 
     uid: Optional[str] = None
 
@@ -76,7 +68,7 @@ if __name__ == '__main__':
     from pprint import pprint
     params = QueryParams(
         app_id='app_id',
-        domain=Domain.GENERAL,
+        domain='general',
         # text=[Text(role=Role.USER, content='hello')],
         text=[{'role': 'user', 'content': 'hello'}],
     )

@@ -8,7 +8,7 @@ from urllib.parse import urlencode, urlparse
 from .common import generate_rfc1123_date
 
 
-def get_wss_url(api_url, api_secret, api_key):
+def get_auth_url(api_url, api_secret, api_key, method='GET'):
     """
     Generate auth params for API request.
     """
@@ -20,7 +20,7 @@ def get_wss_url(api_url, api_secret, api_key):
     signature_origin = textwrap.dedent(f'''
         host: {api_host}
         date: {rfc1123_date}
-        GET {api_path} HTTP/1.1
+        {method} {api_path} HTTP/1.1
     ''').strip()
     signature_sha = hmac.new(
         api_secret.encode(),
@@ -39,12 +39,11 @@ def get_wss_url(api_url, api_secret, api_key):
     authorization_origin = ', '.join(f'{k}="{v}"' for k, v in authorization_payload.items())
     authorization = base64.b64encode(authorization_origin.encode()).decode()
 
-    # step3: generate wss url
+    # step3: generate auth url
     payload = {
         'authorization': authorization,
         'date': rfc1123_date,
         'host': api_host
     }
     url = api_url + '?' + urlencode(payload)
-    # print(f'wss url: {url}')
     return url

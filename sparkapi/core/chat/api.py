@@ -5,7 +5,7 @@ import click
 from websockets.sync.client import connect as ws_connect
 
 from sparkapi import MODELS as MODEL_MAP
-from sparkapi.util import get_wss_url
+from sparkapi.util import get_auth_url
 from .query import QueryParams
 
 
@@ -20,7 +20,7 @@ class SparkAPI(object):
     def create_wss_connection(self):
         if self._wss_url is None:
             api_url = MODEL_MAP[self.api_model]['url']
-            self._wss_url = get_wss_url(api_url, self.api_secret, self.api_key)
+            self._wss_url = get_auth_url(api_url, self.api_secret, self.api_key)
         return ws_connect(self._wss_url)
 
     def build_query(self, messages, **kwargs):
@@ -67,3 +67,10 @@ class SparkAPI(object):
         
             click.secho(f'>>> AI: {result}', fg='cyan', bold=True)
             messages.append({'role': 'assistant', 'content': result})
+
+
+if __name__ == '__main__':
+    from sparkapi.core.chat.api import SparkAPI
+    from sparkapi.config import SparkConfig
+    api = SparkAPI(**SparkConfig().model_dump())
+    print(''.join(api.get_completion('你是谁？')))

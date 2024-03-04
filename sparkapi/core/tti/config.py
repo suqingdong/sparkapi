@@ -5,7 +5,7 @@ class SparkConfig(BaseSettings):
     app_id: str
     api_key: str
     api_secret: str
-    api_model: str = 'v1.5'
+    api_model: str = 'tti'
 
     model_config = SettingsConfigDict(
         env_file='~/.sparkapi.env',

@@ -40,8 +40,8 @@ sparkapi prompt 详细介绍一下科大讯飞，输出Markdown结果
 
 ### Python
 ```python
-from sparkapi.core.api import SparkAPI
-from sparkapi.core.config import SparkConfig
+from sparkapi.core.chat.api import SparkAPI
+from sparkapi.core.chat.config import SparkConfig
 config = SparkConfig().model_dump()
 api = SparkAPI(**config)
 
@@ -70,3 +70,9 @@ print(''.join(res))
 
 #### [1.0.3] - 2023-10-26
 - Add support for model `v3.0`
+
+
+### ToDO
+- Function Call
+- 图片生成
+- 图片理解
