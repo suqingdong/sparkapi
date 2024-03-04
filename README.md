@@ -4,13 +4,6 @@
 ***接口说明***
 注意： 该接口可以正式使用。如您需要申请使用，请点击前往[产品页面 ](https://xinghuo.xfyun.cn/sparkapi?scr=price)
 
-计费说明：
-| 服务引擎               | 单价              |
-|--------------------|-----------------|
-| 讯飞星火认知大模型V1.5 | 0.18元/万tokens   |
-| 讯飞星火认知大模型V2.0 | 0.36元/万tokens   |
-| 讯飞星火认知大模型V3.0 | 0.36元/万tokens   |
-
 ## Installation
 ```bash
 python3 -m pip install -U sparkapi-python
@@ -22,7 +15,7 @@ python3 -m pip install -U sparkapi-python
 SPARK_APP_ID=<your-app-id>
 SPARK_API_SECRET=<your-api-secret>
 SPARK_API_KEY=<your-api-key>
-SPARK_API_MODEL='v3.0'          # v1.5, v2.0, v3.0
+SPARK_API_MODEL='v3.0'          # v1.5, v2.0, v3.0, v3.5
 SPARK_CHAT_MAX_TOKENS=4096      # v1.5: 1-4096, v2.0: 1-8192
 SPARK_CHAT_TEMPERATURE=0.5      # 0-1
 SPARK_CHAT_TOP_K=4              # 1-6
@@ -71,5 +64,9 @@ print(''.join(res))
 
 ### Changelog
 
+#### [1.0.4] - 2024-03-04
+- Add support for model `v3.5`
+- Bug fixed: `SparkAPI.get_completion_from_messages`
+
 #### [1.0.3] - 2023-10-26
-- Add support for `v3.0`
+- Add support for model `v3.0`

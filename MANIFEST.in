@@ -1,1 +1,2 @@
 include sparkapi/version.json
+include sparkapi/config/models.json

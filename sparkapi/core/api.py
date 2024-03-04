@@ -4,10 +4,9 @@ from typing import List
 import click
 from websockets.sync.client import connect as ws_connect
 
-
+from sparkapi import MODELS as MODEL_MAP
 from sparkapi.util import get_wss_url
 from .query import QueryParams
-from .model import MODEL_MAP
 
 
 class SparkAPI(object):
@@ -31,7 +30,6 @@ class SparkAPI(object):
             text=messages,
             **kwargs
         )
-        # print(query.dump_json())
         return query.dump_json()
 
     def get_completion(self, prompt: str, **kwargs):
@@ -47,16 +45,14 @@ class SparkAPI(object):
         wss = self.create_wss_connection()
 
         query = self.build_query(messages, **kwargs)
-        from pprint import pprint
-        # pprint(query)
         wss.send(query)
 
         while True:
             res = json.loads(wss.recv())
-            if res['header']['status'] == 2:
-                break
             content = res['payload']['choices']['text'][0]['content']
             yield content
+            if res['header']['status'] == 2:
+                break
 
     def chat(self, **kwargs):
         """start a chat session with the model.

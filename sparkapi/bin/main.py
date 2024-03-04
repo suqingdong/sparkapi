@@ -1,7 +1,7 @@
 import click
 
 
-from sparkapi import version_info
+from sparkapi import version_info, MODELS
 from sparkapi.core.api import SparkAPI
 from sparkapi.core.config import SparkConfig, ChatConfig
 
@@ -15,12 +15,17 @@ CONTEXT_SETTINGS = dict(help_option_names=['-?', '-h', '--help'])
     context_settings=CONTEXT_SETTINGS,
     no_args_is_help=True,
 )
-@click.option('-e', '--env-file', help='Environment file', default='~/.sparkapi.env', show_default=True)
 @click.version_option(version=version_info['version'], prog_name=version_info['prog'])
+@click.option('-e', '--env-file', help='Environment file', default='~/.sparkapi.env', show_default=True)
+@click.option('-m', '--model', help='The model version to use', type=click.Choice(MODELS.keys()), show_choices=True)
 @click.pass_context
 def cli(ctx, **kwargs):
     config = SparkConfig(_env_file=kwargs['env_file']).model_dump()
     chat_config = ChatConfig(_env_file=kwargs['env_file']).model_dump()
+
+    if kwargs['model']:
+        config['api_model'] = kwargs['model']
+
     # print(config)
     ctx.ensure_object(dict)
     ctx.obj['config'] = config
