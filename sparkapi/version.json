@@ -1,8 +1,8 @@
 {
     "prog": "sparkapi",
-    "desc": "SparkDesk API and Client",
+    "desc": "Spark API and Client",
     "url": "https://github.com/suqingdong/sparkapi",
     "author": "suqingdong",
     "author_email": "suqingdong1114@gmail.com",
-    "version": "1.0.4"
+    "version": "1.0.5"
 }

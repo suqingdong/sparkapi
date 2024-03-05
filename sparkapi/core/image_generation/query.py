@@ -51,6 +51,8 @@ class QueryParams:
                     'temperature': self.temperature,
                     'top_k': self.top_k,
                     'chat_id': self.chat_id,
+                    'width': self.width,
+                    'height': self.height,
                 }
             },
             'payload': {

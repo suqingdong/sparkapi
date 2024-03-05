@@ -66,9 +66,9 @@ class SparkAPI(object):
 
 
 if __name__ == '__main__':
-    from sparkapi.core.tti.api import SparkAPI
+    from sparkapi.core.image_generation.api import SparkAPI
     from sparkapi.config import SparkConfig
-    api = SparkAPI(**SparkConfig(api_model='tti').model_dump())
+    api = SparkAPI(**SparkConfig(api_model='image_generation').model_dump())
     # res = api.get_completion('帮我生成一张二次元风景图', outfile='data_url')
     res = api.get_completion('帮我生成一张二次元风景图', outfile='out.png')
     print(res)

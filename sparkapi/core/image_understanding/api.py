@@ -64,12 +64,12 @@ class SparkAPI(object):
         """
         messages = []
         while True:
-            file = click.prompt(click.style('>>> Image', fg='yellow', italic=True), type=click.Path(exists=True))
-            prompt = click.prompt(click.style('>>> User', fg='yellow', italic=True))
             if messages == []:
+                file = click.prompt(click.style('>>> Image', fg='yellow', italic=True), type=click.Path(exists=True))
                 image_base64 = base64.b64encode(open(file, 'rb').read()).decode()
                 messages.append({'role': 'user', 'content': image_base64, 'content_type': 'image'},)
 
+            prompt = click.prompt(click.style('>>> User', fg='yellow', italic=True))
             messages.append({'role': 'user', 'content': prompt})
 
             # print(messages)
@@ -80,9 +80,9 @@ class SparkAPI(object):
 
 
 if __name__ == '__main__':
-    from sparkapi.core.image.api import SparkAPI
+    from sparkapi.core.image_understanding.api import SparkAPI
     from sparkapi.config import SparkConfig
-    api = SparkAPI(**SparkConfig(api_model='image').model_dump())
+    api = SparkAPI(**SparkConfig(api_model='image_understanding').model_dump())
     file = open('out.png', 'rb')
     print(''.join(api.get_completion('out.png', '解释一下这张图片')))
     api.chat()
