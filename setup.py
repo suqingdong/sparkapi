@@ -21,7 +21,7 @@ setup(
     packages=find_packages(),
     include_package_data=True,
     entry_points={'console_scripts': [
-        'sparkapi = sparkapi.bin.main:main',
+        'sparkapi = sparkapi.bin.cli:main',
     ]},
     classifiers=[
         'Development Status :: 5 - Production/Stable',
