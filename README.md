@@ -4,12 +4,12 @@
 ***接口说明***
 注意： 该接口可以正式使用。如您需要申请使用，请点击前往[产品页面 ](https://xinghuo.xfyun.cn/sparkapi?scr=price)
 
-## 安装
+## 一 安装
 ```bash
 python3 -m pip install -U sparkapi-python
 ```
 
-## 配置
+## 二 配置
 > 拷贝 `example.env` 到 `~/.sparkapi.env` 并修改成自己的配置
 ```
 SPARK_APP_ID=<your-app-id>
@@ -21,9 +21,9 @@ SPARK_CHAT_TEMPERATURE=0.5      # 取值范围 (0，1] ，默认值0.5
 SPARK_CHAT_TOP_K=4              # 取值为[1，6],默认为4
 ```
 
-## 快速开始
+## 三 快速开始
 
-### 命令行模式
+### 3.1 命令行模式
 ```bash
 sparkapi --help
 
@@ -45,7 +45,7 @@ Commands:
   Contact: suqingdong <suqingdong1114@gmail.com> 
 "
 ```
-#### 1. Chat [星火认知大模型]
+#### 3.1.1. Chat [星火认知大模型]
 ```bash
 sparkapi Chat --help
 
@@ -102,7 +102,7 @@ print(fibonacci(10))
 >>> User: 
 </pre>
 
-#### 2. ImageGeneration [图像生成]
+#### 3.1.2. ImageGeneration [图像生成]
 ```bash
 sparkapi ImageGeneration --help
 
@@ -130,7 +130,7 @@ sparkapi ImageGeneration -p 一只可爱的小狗在奔跑 -o dog.1280x720.png -
 "save file: dog.1280x720.png"
 ```
 
-#### 3. ImageUnderstanding [图像理解]
+#### 3.1.3. ImageUnderstanding [图像理解]
 ```bash
 sparkapi ImageUnderstanding --help
 "
@@ -172,7 +172,7 @@ sparkapi ImageUnderstanding --chat
 "
 ```
 
-### Python中使用
+### 3.2 Python中使用
 ```python
 from sparkapi.config import SparkConfig
 from sparkapi.core.chat.api import SparkAPI as ChatAPI
@@ -196,7 +196,7 @@ print(''.join(result))
 ```
 
 
-## Changelog
+## 四 Changelog
 
 #### [1.0.5] - 2024-03-05
 - Add support for `ImageGeneration` and `ImageUnderstanding`
