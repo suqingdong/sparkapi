@@ -207,3 +207,8 @@ print(''.join(result))
 
 #### [1.0.3] - 2023-10-26
 - Add support for model `v3.0`
+
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=suqingdong/sparkapi&type=Date)](https://star-history.com/#suqingdong/sparkapi&Date)
