@@ -1,3 +1,7 @@
+![PyPI - Version](https://img.shields.io/pypi/v/sparkapi-python)
+![PyPI - Status](https://img.shields.io/pypi/status/sparkapi-python)
+![PyPI - License](https://img.shields.io/pypi/l/sparkapi-python)
+
 # Spark API and Client
 > https://www.xfyun.cn/doc/spark/Web.html
 
@@ -197,6 +201,9 @@ print(''.join(result))
 
 
 ## 四 Changelog
+
+#### [1.0.7] - 2024-06-28
+- Add support for model `v4.0`
 
 #### [1.0.5] - 2024-03-05
 - Add support for `ImageGeneration` and `ImageUnderstanding`

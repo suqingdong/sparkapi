@@ -15,6 +15,10 @@
         "domain": "generalv3.5",
         "url": "wss://spark-api.xf-yun.com/v3.5/chat"
     },
+    "v4.0": {
+        "domain": "4.0Ultra",
+        "url": "wss://spark-api.xf-yun.com/v4.0/chat"
+    },
     "image_generation": {
         "domain": "general",
         "url": "https://spark-api.cn-huabei-1.xf-yun.com/v2.1/tti",
